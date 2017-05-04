@@ -1,4 +1,5 @@
 (function () {
+    var image = document.querySelector('#image');
     var title = document.querySelector('#title');
     var choices = document.querySelector('#choices');
     var braveryResult = document.querySelector('#bravery-result');
@@ -24,6 +25,12 @@
         if (step.jump) {
             step = story[step.jump];
         }
+        if (step.image) {
+            image.src = 'images/' + step.image + '.png';
+            image.style.display = 'inline';
+        } else {
+            image.style.display = 'none';
+        }
         title.textContent = step.title;
         if (!step.choices) {
             step.choices = {
@@ -43,6 +50,7 @@
                 if (step.choices[choice].jump === 0) {
                     location.reload();
                 }
+                scrollTo(0, 0);
                 show(step.choices[choice]);
             });
             choices.appendChild(choiceElem);
