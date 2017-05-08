@@ -34,7 +34,7 @@ var story = [
     title: 'Three witches appear and tell you that you shalt be king hereafter.',
     image: 'witches',
     choices: {
-      "You don't believe them at all.": {
+      "You don't believe them.": {
         jump: 2
       },
       'You believe them, and you hope that one day Duncan will name you as the next king.': {
